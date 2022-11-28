@@ -1,1 +1,1 @@
-web: python webvis.py --port=80
+web: python webvis.py --port=8000
