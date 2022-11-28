@@ -1,1 +1,1 @@
-worker: python webvis.py
+web: python webvis.py --port=80
