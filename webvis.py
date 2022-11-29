@@ -18,7 +18,6 @@ pywebio.config(theme="minty")
 #Used for calculating learning rate
 #Inversely proportional to number of steps
 alpha = 0.05
-PORT = 8080
 
 #initialize global variables
 x, x_min, x_max, x_samples, x_vals = 0,0,0,0,0 
@@ -227,7 +226,7 @@ def web():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-p", "--port", type=int, default=PORT)
+    parser.add_argument("-p", "--port", type=int, default=8080)
     args = parser.parse_args()
 
     pywebio.start_server(web, port=args.port)
