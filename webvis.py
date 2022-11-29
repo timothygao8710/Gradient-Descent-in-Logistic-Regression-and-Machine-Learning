@@ -9,7 +9,6 @@ from numpy import sin, cos, tan, arcsin, arccos, arctan, sinh, cosh, tanh, arcsi
 # from math import sin, cos, tan, gcd, log10, sqrt, asin, acos, atan, dist, sinh, cosh, tanh, gamma, log
 from math import ceil
 from random import randrange
-print(np.version.version)
 
 pywebio.config(theme="minty")
 
@@ -224,4 +223,4 @@ def web():
 
 
 if __name__ == '__main__':
-    pywebio.platform.tornado.start_server(web, port=PORT, websocket_ping_interval=30)
+    pywebio.platform.flask.start_server(web)
