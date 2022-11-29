@@ -223,4 +223,4 @@ def web():
 
 
 if __name__ == '__main__':
-    pywebio.platform.tornado.start_server(web, port=8080, websocket_ping_interval=30)
+    pywebio.platform.tornado.start_server(web, port=PORT, websocket_ping_interval=30)
