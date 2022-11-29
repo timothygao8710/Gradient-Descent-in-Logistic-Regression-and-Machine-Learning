@@ -10,6 +10,9 @@ from numpy import sin, cos, tan, arcsin, arccos, arctan, sinh, cosh, tanh, arcsi
 from math import ceil
 from random import randrange
 
+from flask import Flask, send_from_directory
+import argparse
+
 pywebio.config(theme="minty")
 
 #Used for calculating learning rate
@@ -223,4 +226,9 @@ def web():
 
 
 if __name__ == '__main__':
-    pywebio.platform.flask.start_server(web)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=PORT)
+    args = parser.parse_args()
+
+    pywebio.start_server(web, port=args.port)
+    # web()
