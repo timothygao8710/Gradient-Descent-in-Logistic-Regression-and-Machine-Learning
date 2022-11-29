@@ -16,6 +16,7 @@ pywebio.config(theme="minty")
 #Used for calculating learning rate
 #Inversely proportional to number of steps
 alpha = 0.05
+PORT = 8080
 
 #initialize global variables
 x, x_min, x_max, x_samples, x_vals = 0,0,0,0,0 
