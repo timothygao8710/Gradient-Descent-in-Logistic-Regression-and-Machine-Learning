@@ -1,1 +1,1 @@
-web: python webvis.py --port=$8080
+web: python webvis.py --port=$PORT
