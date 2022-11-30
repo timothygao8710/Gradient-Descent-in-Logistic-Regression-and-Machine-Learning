@@ -190,7 +190,7 @@ def getFig():
 def web():
     global x_min, x_max, x_samples, x_vals, y_min, y_max, y_samples, y_vals, x, y, z, alpha, equation
     info = input_group("User info",[
-        input('f(x, y) = ', name='equation', value = "sin(x) ** 10 + cos(10 + y * x) * cos(x)", validate = check_eq),
+        input('f(x, y) = ', name='equation', value = "sin(x) ^ 10 + cos(10 + y * x) * cos(x)", validate = check_eq),
         input('Minimum value: ', name='min', type=FLOAT, value = "-3", validate = check_range),
         input('Maximum value: ', name='max', type=FLOAT, value = "3", validate = check_range),
         input('Learning rate: ', name='alpha', type=FLOAT, value = "0.5", validate = check_range)
