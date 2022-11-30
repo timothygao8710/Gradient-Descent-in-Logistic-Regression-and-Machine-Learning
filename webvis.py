@@ -1,6 +1,7 @@
 import pywebio
+import webbrowser
 from pywebio.input import input, FLOAT, input_group, NUMBER
-from pywebio.output import put_text, put_html, put_markdown
+from pywebio.output import put_text, put_html, put_markdown, put_button
 import plotly.graph_objects as go
 import plotly
 import matplotlib.pyplot as plt
@@ -57,6 +58,9 @@ def check_eq(eq_str):
                 eval(eq_str)
     except Exception as e:
         return 'Please enter a valid expression: ' + str(e)
+
+def reload():
+    webbrowser.open('https://gradientdescent.herokuapp.com/')
 
 def draw_vectors(step_history):
     plotted = []
@@ -221,6 +225,9 @@ def web():
     
     put_text(res[1]).style('font-size: 25px')
     put_text(res[2]).style('font-size: 25px')
+    
+    put_button("Run again", onclick=lambda: reload())
+
 
 
 if __name__ == '__main__':
