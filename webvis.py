@@ -15,15 +15,13 @@ import argparse
 
 pywebio.config(theme="minty")
 
-#Used for calculating learning rate
-#Inversely proportional to number of steps
-alpha = 0.05
-
 #initialize global variables
 x, x_min, x_max, x_samples, x_vals = 0,0,0,0,0 
 y, y_min, y_max, y_samples, y_vals = 0,0,0,0,0
 equation, z = 0, 0
-alpha = 0.02
+#Used for calculating learning rate
+#Inversely proportional to number of steps
+alpha = 0.015
 
 #do cool functions (gcd, atan, dist)
 #play bruh sound when bad
@@ -52,6 +50,7 @@ def check_LR(val):
         return "Please enter a percentage between 0 and 1"
     
 def check_eq(eq_str):
+    eq_str = eq_str.replace('^', '**')
     try:
         for x in range(-50, 50, 10):
             for y in range(-50, 50, 10):
@@ -180,7 +179,7 @@ def getFig():
     #     eye=dict(x=x_vals[mv[0]] * 0.8, y=y_vals[mv[1]] * 0.8, z = np.max(z) + 0.05 * (np.max(z) - np.min(z)))
     # )
 
-    fig.update_layout(title= "f(x,y) = " + equation)
+    fig.update_layout(title= "f(x,y) = " + equation.replace('**', '^'))
 
     return (
         fig,
@@ -197,7 +196,7 @@ def web():
         input('Learning rate: ', name='alpha', type=FLOAT, value = "0.5", validate = check_range)
     ])
 
-    equation = info['equation']
+    equation = info['equation'].replace('^', '**')
     alpha = info['alpha']
     x_min = info['min']
     x_max = info['max']
