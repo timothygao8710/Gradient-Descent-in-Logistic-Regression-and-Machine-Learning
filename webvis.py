@@ -1,7 +1,7 @@
 import pywebio
 import webbrowser
 from pywebio.input import input, FLOAT, input_group, NUMBER
-from pywebio.output import put_text, put_html, put_markdown, put_button
+from pywebio.output import put_text, put_html, put_markdown, put_button, put_link
 import plotly.graph_objects as go
 import plotly
 import matplotlib.pyplot as plt
@@ -192,8 +192,14 @@ def getFig():
     )
 
 def web():
+    put_text("Gradient Descent Visualization").style('font-size: 40px')
+    put_text("by Timothy Gao").style('font-size: 15px')
+    
+    put_text("This is a visualization of the gradient descent algorithm on an interactive 3D graph. User can customize the graph by entering any equation for the function f(x, y). Please use * for multiplication. Also, feel free to experiment with functions like 'tanh', 'abs', and 'log'. These are all supported. the maximum and minimum values of the function, as well as the learning rate. After graphing, a visual of both the graph and each iteration of gradient descent will be displayed, where vectors are scaled to the magnitude of each step taken and will be shown on the 3D graph. The user can use their cursor to rotate the graph, zoom in and out (by scrolling), pan the graph, take a screenshot, and play around with different camera angles. The minimum value found by gradient descent and total number of iterations will also be displayed at the bottom.").style('font-size: 15px')
+    put_link(name="Please visit the notebook for more details", url="google.com", new_window=True)
+    
     global x_min, x_max, x_samples, x_vals, y_min, y_max, y_samples, y_vals, x, y, z, alpha, equation
-    info = input_group("User info",[
+    info = input_group("Customize Graph",[
         input('f(x, y) = ', name='equation', value = "sin(x) ^ 10 + cos(10 + y * x) * cos(x)", validate = check_eq),
         input('Minimum value: ', name='min', type=FLOAT, value = "-3", validate = check_range),
         input('Maximum value: ', name='max', type=FLOAT, value = "3", validate = check_range),
