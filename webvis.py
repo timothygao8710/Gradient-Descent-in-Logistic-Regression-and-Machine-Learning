@@ -226,8 +226,6 @@ def web():
     
     put_link(name="Run Again", url="https://gradientdescent.herokuapp.com/", new_window=False).style('font-size: 25px')
 
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--port", type=int, default=8080)
