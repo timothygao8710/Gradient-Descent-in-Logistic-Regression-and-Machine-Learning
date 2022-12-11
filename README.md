@@ -1,4 +1,4 @@
-# Applications-of-Gradient-Descent-in-Machine-Learning
+# Gradient Descent, Logistic Regression, and Machine Learning
 
 <img width="697" alt="Screen Shot 2022-11-29 at 9 00 08 PM" src="https://user-images.githubusercontent.com/35588167/204716548-4f09a21a-8ac5-483e-bc36-1dbe4e3ee1ce.png">
 
