@@ -1,5 +1,4 @@
 import pywebio
-import webbrowser
 from pywebio.input import input, FLOAT, input_group, NUMBER
 from pywebio.output import put_text, put_html, put_markdown, put_button, put_link
 import plotly.graph_objects as go
@@ -23,10 +22,6 @@ equation, z = 0, 0
 #Used for calculating learning rate
 #Inversely proportional to number of steps
 alpha = 0.015
-
-#do cool functions (gcd, atan, dist)
-#play bruh sound when bad
-#hasn't been extensively tested
 
 #calculate initial learning rate
 #learning rate usually undergoes hyperparameter tuning for particular surface/graph, this is just for demonstration purposes
@@ -58,9 +53,6 @@ def check_eq(eq_str):
                 eval(eq_str)
     except Exception as e:
         return 'Please enter a valid expression: ' + str(e)
-
-def reload():
-    webbrowser.open('https://gradientdescent.herokuapp.com/')
 
 def draw_vectors(step_history):
     plotted = []
@@ -195,8 +187,8 @@ def web():
     put_text("Gradient Descent Visualization").style('font-size: 40px')
     put_text("by Timothy Gao").style('font-size: 15px')
     
-    put_text("This is a visualization of the gradient descent algorithm on an interactive 3D graph. User can customize the graph by entering any equation for the function f(x, y). Please use * for multiplication. Also, feel free to experiment with functions like 'tanh', 'abs', and 'log'. These are all supported. the maximum and minimum values of the function, as well as the learning rate. After graphing, a visual of both the graph and each iteration of gradient descent will be displayed, where vectors are scaled to the magnitude of each step taken and will be shown on the 3D graph. The user can use their cursor to rotate the graph, zoom in and out (by scrolling), pan the graph, take a screenshot, and play around with different camera angles. The minimum value found by gradient descent and total number of iterations will also be displayed at the bottom.").style('font-size: 15px')
-    put_link(name="Please visit the notebook for more details", url="google.com", new_window=True)
+    put_text("This is a visualization of the gradient descent algorithm on an interactive 3D graph. Users can customize the graph by entering any equation for the function f(x, y). Please use the * symbol for multiplication. Also, feel free to experiment with functions like 'tanh', 'abs', and 'log', which are all supported. Users can also customize the maximum and minimum values of the function as well as the learning rate. After graphing, a visual of both the graph and each iteration of gradient descent will be displayed, where vectors are scaled to the magnitude of each step and will be shown on a 3D graph. The user can then use their cursor to rotate the graph, zoom in and out (by scrolling), pan the graph, take a screenshot, and play around with different camera angles. The minimum value found by gradient descent and total number of iterations to reach the minimum will also be displayed at the bottom.").style('font-size: 15px')
+    put_link(name="Please visit the notebook for more details", url="https://github.com/timothygao8710/Applications-of-Gradient-Descent-in-Machine-Learning/blob/main/Logistic%20Regression.ipynb", new_window=True)
     
     global x_min, x_max, x_samples, x_vals, y_min, y_max, y_samples, y_vals, x, y, z, alpha, equation
     info = input_group("Customize Graph",[
@@ -232,7 +224,7 @@ def web():
     put_text(res[1]).style('font-size: 25px')
     put_text(res[2]).style('font-size: 25px')
     
-    put_button("Run again", onclick=lambda: reload())
+    put_link(name="Run Again", url="https://gradientdescent.herokuapp.com/", new_window=False).style('font-size: 25px')
 
 
 
