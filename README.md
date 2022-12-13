@@ -1,6 +1,8 @@
 # Gradient-Descent-in-Logistic-Regression-and-Machine-Learning
 (Multivariable Calculus Final Project)
 
+Presentation (not on Github): https://docs.google.com/presentation/d/1098XGGfISbGuchP5S50sae5CEaa_XHkOjU8fje_diI0/edit#slide=id.p
+
 Main paper explaining everything: https://github.com/timothygao8710/Gradient-Descent-in-Logistic-Regression-and-Machine-Learning/blob/main/Main%20Paper.ipynb
 
 Website for visualizer: https://bit.ly/reyes-gradient-descent (might take a while to load the first time)
